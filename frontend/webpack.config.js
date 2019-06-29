@@ -9,16 +9,15 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   devServer: {
-    contentBase: './dist',
+    contentBase: 'src/public',
     historyApiFallback: true,
     port: 8000,
     host: '0.0.0.0',
   },
   devtool: 'eval',
   output: {
-    path: __dirname + '/dist',
+    filename: 'index.jsx',
     publicPath: '/',
-    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -36,9 +35,6 @@ module.exports = {
     new HtmlWebpackPlugin({ template: 'src/public/index.html' }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new TransferWebpackPlugin([
-      { from: 'src/public' },
-    ], '.'),
     new webpack.DefinePlugin({
       'process.env': {
         ENDPOINT: JSON.stringify(process.env.ENDPOINT || 'http://localhost:9000/api'),
