@@ -1,3 +1,24 @@
+# Mandatory features done
+
+Tested environment:
+Windows 10 Pro
+Docker version 18.09.2, build 6247962
+docker-compose version 1.23.2, build 1110ad01
+
+# Usage 
+
+Set environment
+weatherapp$ set APPID=your_openweathermap_appid
+weatherapp$ set ENDPOINT=http://localhost:9000/api
+
+Run in weatherapp directory
+weatherapp$ docker-compose up
+
+Browse to
+http://localhost:8000
+
+# --- Original README starts here ---
+
 # Weatherapp
 
 There was a beautiful idea of building an app that would show the upcoming weather. The developers wrote a nice backend and a frontend following the latest principles and - to be honest - bells and whistles. However, the developers did not remember to add any information about the infrastructure or even setup instructions in the source code.
