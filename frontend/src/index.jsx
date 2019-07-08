@@ -46,16 +46,13 @@ class App extends React.Component {
 }
 
 const Forecast = ({ forecast }) => (
-	<div>
-	    <Icon icon={forecast.weather[0].icon} />
-	    <Dt dt={forecast.dt} />
 	    <Dt_txt dt_txt={forecast.dt_txt} />
-	</div>
+	    <Icon icon={forecast.weather[0].icon} />
 );
 
-const Icon = ({ icon }) => <h3>{icon}</h3>;
-const Dt = ({ dt }) => <h3>{dt}</h3>;
-const Dt_txt = ({ dt_txt }) => <h3>{dt_txt}</h3>;
+const Dt_txt = ({ dt_txt }) => <p>{dt_txt}</p>;
+const Icon = ({ icon }) => <img src={`/img/${icon.slice(0, -1)}.svg`} />
+
 
 ReactDOM.render(
   <App />,
