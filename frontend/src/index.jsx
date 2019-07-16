@@ -32,27 +32,21 @@ class App extends React.Component {
   render() {
     return (
       <div>
-	<ul>
+        <table>
+	    <tbody>
 	    {this.state.forecasts.map( item => (
-		    <li key={JSON.stringify(item.dt_txt)}>
-		    	<Forecast forecast={item} />
-		    </li>
+		    <tr key={JSON.stringify(item.dt)}>
+		      <td>{item.dt_txt}</td>
+		      <td><img  width="96" src={`/img/${item.weather[0].icon.slice(0, -1)}.svg`} /></td>
+		    </tr>
 	    ))}
-        </ul>
+	    </tbody>
+        </table>
       </div>
 
     );
   }
 }
-
-const Forecast = ({ forecast }) => (
-	    <Dt_txt dt_txt={forecast.dt_txt} />
-	    <Icon icon={forecast.weather[0].icon} />
-);
-
-const Dt_txt = ({ dt_txt }) => <p>{dt_txt}</p>;
-const Icon = ({ icon }) => <img src={`/img/${icon.slice(0, -1)}.svg`} />
-
 
 ReactDOM.render(
   <App />,
