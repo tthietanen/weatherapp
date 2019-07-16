@@ -29,6 +29,10 @@ module.exports = {
           options: { presets: ['react', 'es2016'] },
         }],
       },
+      {
+        test:/\.css$/,
+        use:['style-loader','css-loader']
+      }
     ],
   },
   plugins: [

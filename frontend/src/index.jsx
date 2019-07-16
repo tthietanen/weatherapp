@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Table1 from './Table1'
 
 const baseURL = process.env.ENDPOINT;
 
@@ -32,18 +33,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <table>
-	    <tbody>
-	    {this.state.forecasts.map( item => (
-		    <tr key={JSON.stringify(item.dt)}>
-		      <td>{item.dt_txt}</td>
-		      <td><img  width="96" src={`/img/${item.weather[0].icon.slice(0, -1)}.svg`} /></td>
-		    </tr>
-	    ))}
-	    </tbody>
-        </table>
+        <Table1 data={this.state.forecasts}/>
       </div>
-
     );
   }
 }
