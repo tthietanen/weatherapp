@@ -1,21 +1,33 @@
 import React, { Component } from 'react';
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-//import '../css/Table.css';
-import '../node_modules/react-bootstrap-table/css/react-bootstrap-table.css'
+import BootstrapTable from 'react-bootstrap-table-next';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
  
- 
-class Table1 extends Component {
-  weatherFormatter(cell, row) {
-    return <img  src={`/img/${cell[0].icon.slice(0, -1)}.svg`} />
-  }
+function weatherFormatter(cell, row) {
+  return <img  src={`/img/${cell[0].icon.slice(0, -1)}.svg`} />
+}
 
+const columns = [{
+	  dataField: 'dt_txt',
+	  text: 'Time'
+}, {
+	  dataField: 'weather',
+	  text: 'Weather',
+	  formatter: weatherFormatter
+}];
+
+class Table1 extends Component {
   render() {
     return (
       <div>
-        <BootstrapTable data={this.props.data}>
-         <TableHeaderColumn isKey dataField='dt_txt'>Time</TableHeaderColumn>
-         <TableHeaderColumn dataField='weather' dataFormat={this.weatherFormatter}>Weather</TableHeaderColumn>
-        </BootstrapTable>
+        <BootstrapTable
+	  bootstrap4={ true }
+	  striped={ true }
+	  bordered={ true }
+	  keyField='dt_txt'
+	  data={ this.props.data }
+	  columns={ columns }
+	  />
       </div>
     );
   }
