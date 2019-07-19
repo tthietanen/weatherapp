@@ -6,7 +6,7 @@ import '../node_modules/react-bootstrap-table/css/react-bootstrap-table.css'
  
 class Table1 extends Component {
   weatherFormatter(cell, row) {
-    return cell[0].icon
+    return <img  src={`/img/${cell[0].icon.slice(0, -1)}.svg`} />
   }
 
   render() {
