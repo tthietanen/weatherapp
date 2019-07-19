@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
  
 function weatherFormatter(cell, row) {
-  return <img  src={`/img/${cell[0].icon.slice(0, -1)}.svg`} />
+  return <img  src={`/img/${cell[0].icon.slice(0, -1)}.svg`} style={{ maxHeight:50 }} />
 }
 
 const columns = [{
