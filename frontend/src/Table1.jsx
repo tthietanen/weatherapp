@@ -9,7 +9,12 @@ function weatherFormatter(cell, row) {
 
 const columns = [{
 	  dataField: 'dt_txt',
-	  text: 'Time'
+	  text: 'Time',
+	  style: {
+            fontWeight: 'bold',
+            fontSize: '18px',
+	    textAlign: 'center'
+          }
 }, {
 	  dataField: 'weather',
 	  text: 'Weather',
