@@ -13,7 +13,7 @@
     "lint": "node_modules/.bin/eslint --ext .js --ext .jsx ."
   },
   "dependencies": {
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.3.1",
     "react": "^16.8.6",
     "react-bootstrap-table-next": "^3.1.5",
     "react-dom": "^16.8.6"
